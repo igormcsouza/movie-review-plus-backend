@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+    backend:
+        build:
+            context: ..
+            dockerfile: docker/Dockerfile-backend
+        command: >
+            gunicorn -b 0.0.0.0:5766
+            --access-logfile -
+            --reload
+            "app:app"
+        env_file:
+            - ./.env
+        volumes:
+            - ../backend/:/movie-review-plus-backend/
+        ports:
+            - 5766:5766
