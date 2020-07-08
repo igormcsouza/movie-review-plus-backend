@@ -140,6 +140,3 @@ cython_debug/
 # Temporary database for testing
 temp.db
 
-# Models
-backend/models/*.joblib
-backend/models/*.pickle
