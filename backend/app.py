@@ -4,6 +4,9 @@ import config
 app = Flask(__name__)
 app.config.from_object(config)
 
+from flask_cors import CORS
+CORS(app)
+
 from flask_restful import Api
 from resources import MovieReviewPredict
 
