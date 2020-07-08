@@ -3,7 +3,7 @@ version: "3.7"
 services:
     backend:
         build:
-            context: ..
+            context: .
             dockerfile: docker/Dockerfile
         command: >
             gunicorn -b 0.0.0.0:5766
@@ -13,6 +13,6 @@ services:
         env_file:
             - ./.env
         volumes:
-            - ../backend/:/movie-review-plus-backend/
+            - ./backend:/movie-review-plus-backend/
         ports:
             - 5766:5766
